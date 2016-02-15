@@ -24,7 +24,7 @@ NOTE:
             var pushNotification;
             
             function onDeviceReady() {
-                //$("#app-status-ul").append('<li>Activacion de evento</li>');
+                $("#app-status-ul").append('<li>Device ok. Evento ativado.</li>');
                 
 				document.addEventListener("backbutton", function(e)
 				{
@@ -46,10 +46,10 @@ NOTE:
 				try 
 				{ 
                 	pushNotification = window.plugins.pushNotification;
-		      //$("#app-status-ul").append('<li>Usted esta en un dispositivo ' + device.platform + '</li>');
+		      $("#app-status-ul").append('<li>Registrando o ' + device.platform + '</li>');
                 	if (device.platform == 'android' || device.platform == 'Android' ||
                             device.platform == 'amazon-fireos' ) {
-			pushNotification.register(successHandler, errorHandler, {"senderID":"","ecb":"onNotification"});		// required!
+			pushNotification.register(successHandler, errorHandler, {"senderID":"469201422848","ecb":"onNotification"});		// required!
 					} else {
                     	pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});	// required!
                 	}
@@ -145,7 +145,7 @@ NOTE:
             }
 			
             function successHandler (result) {
-                //$("#app-status-ul").append('<li>Ingresado:'+ result +'</li>');
+                $("#app-status-ul").append('<li>sucesso:'+ result +'</li>');
             }
             
             function errorHandler (error) {
@@ -160,7 +160,7 @@ NOTE:
 <h2>Teste plugin push </h2>
         <div id="app-status-div">
 			<ul id="app-status-ul">
-					<li>Cordova PushNotification Plugin Demo</li>
+					<li>SoloInnova Cordova PushNotification Plugin Demo</li>
 				</ul>
 			</div>
 		</div>
